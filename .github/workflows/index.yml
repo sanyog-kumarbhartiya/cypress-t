@@ -1,30 +1,12 @@
-name: Cypress Tests
-
+name: End-to-end tests
 on: push
-   
 jobs:
-  cypress_tests:
-    runs-on: ubuntu-latest
-
+  cypress-run:
+    runs-on: ubuntu-22.04
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Run Cypress tests (1-getting-started)
-        uses: cypress-io/github-action@v2
-        with:
-          record: true
-          parallel: true
-          group: '1-getting-started'
-
-      - name: Run Cypress tests (2-advanced-example)
-        uses: cypress-io/github-action@v2
-        with:
-          record: true
-          parallel: true
-          group: '2-advanced-example'
-
-      
+      - name: Checkout
+        uses: actions/checkout@v4
+      # Install npm dependencies, cache them correctly
+      # and run all Cypress tests
+      - name: Cypress run
+        uses: cypress-io/github-action@v6
