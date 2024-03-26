@@ -16,14 +16,14 @@ jobs:
       - name: Run Cypress tests (getting-started)
         uses: cypress-io/github-action@v6
         with:
-          record: true
+          
           parallel: true
           group: '1-getting-started'
 
       - name: Run Cypress tests (2-advanced-example)
         uses: cypress-io/github-action@v6
         with:
-          record: true
+          
           parallel: true
           group: '2-advanced-example'
 
