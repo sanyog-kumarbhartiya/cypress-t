@@ -8,22 +8,22 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v2
 
       - name: Install dependencies
         run: npm install
 
       - name: Run Cypress tests (1-getting-started)
-        uses: cypress-io/github-action@v6
+        uses: cypress-io/github-action@v2
         with:
-          
+          record: true
           parallel: true
           group: '1-getting-started'
 
       - name: Run Cypress tests (2-advanced-example)
-        uses: cypress-io/github-action@v6
+        uses: cypress-io/github-action@v2
         with:
-          
+          record: true
           parallel: true
           group: '2-advanced-example'
 
